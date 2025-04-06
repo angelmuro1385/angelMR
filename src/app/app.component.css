@@ -1,0 +1,64 @@
+.nav {
+    list-style: none;
+    padding: 0;
+    margin:0;
+    display: flex;
+    background-color: #333;
+}
+
+.navbar-nav li {
+    padding: 15px;
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.navbar-nav li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+  
+  .content {
+    padding: 20px;
+  }
+
+  .container {
+    display: flex; /* Hace que el sidebar y el contenido estén uno al lado del otro */
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  }
+  
+  /* Estilo del sidebar */
+  .sidebar {
+    width: 250px; /* Ancho fijo del sidebar */
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Color de texto en el sidebar */
+    position: fixed; /* Fijado en la pantalla */
+    top: 0;
+    left: 0;
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    padding: 20px; /* Espaciado dentro del sidebar */
+    z-index: 1000; /* Asegura que el sidebar esté encima del contenido */
+}
+
+/* Estilo del contenido principal */
+.main-content {
+    margin-left: 250px; /* Ajusta el margen izquierdo para que no se solape con el sidebar */
+    padding: 20px; /* Añade espacio dentro del contenido */
+    flex-grow: 1; /* Hace que el contenido ocupe el resto del espacio disponible */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 200px; /* Reducir el tamaño del sidebar en pantallas pequeñas */
+  }
+
+  .main-content {
+      margin-left: 0; /* El contenido ocupa toda la pantalla sin el sidebar */
+  }
+}

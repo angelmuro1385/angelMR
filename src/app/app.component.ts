@@ -1,12 +1,35 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true, // Solo si estás usando Angular Standalone Components
+  imports: [RouterOutlet, NavbarComponent, SidebarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angelMR';
+  constructor(private router: Router) {}
+
+  goToIndex() {
+    this.router.navigate(['/']);  // ✅ Corregido
+  }
+
+  goToAboutUs() {
+    this.router.navigate(['/about-us']);
+  }
+
+  goToProducts() {
+    this.router.navigate(['/products']);
+  }
+
+  goToGames() {
+    this.router.navigate(['/games']);
+  }
+
+  goToMusic() {
+    this.router.navigate(['/music']);
+  }
 }

@@ -21,13 +21,18 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+                "src/assets",
+                "src/favicon.ico",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "https://www.w3schools.com/w3css/5/w3.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
+              
             ],
             "scripts": []
           },
@@ -79,18 +84,25 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+                
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "https://www.w3schools.com/w3css/5/w3.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
+              
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,15 @@
+<div class="container" style="margin-left:20%">
+  <h2>Mi Nevera</h2>
+
+  <div *ngFor="let producto of productos" class="productos">
+    <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+    <p><strong>Cantidad:</strong> {{ producto.cantidad }}</p>
+    <p><strong>Precio:</strong> {{ producto.precio | currency:'EUR' }}</p>
+    <p><strong>Fecha de compra:</strong> {{ producto.fechaCompra }}</p>
+    <p><strong>Fecha de caducidad:</strong> {{ producto.fechaCaducidad }}</p>
+    <hr>
+  </div>
+
+  <h3>Total Gastado: {{ gastoTotal | currency:'EUR' }}</h3>
+</div>
+

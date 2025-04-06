@@ -1,0 +1,66 @@
+
+  
+
+
+[
+  {
+    "4": [
+      { "nombre": "Lomo", "precio": 5.0, "cantidad": 10 },
+      { "nombre": "Ternera", "precio": 7.5, "cantidad": 5 },
+      { "nombre": "Pollo", "precio": 3.0, "cantidad": 8 }
+    ],
+    "3": [
+      { "nombre": "Merluza", "precio": 6.0, "cantidad": 4 },
+      { "nombre": "Salmón", "precio": 9.0, "cantidad": 6 }
+    ]
+  },
+  {
+    "nombre": "Carne",
+    "cantidad": 7,
+    "precio": 34.50,
+    "fechaCompra": "2025-04-01",
+    "fechaCaducidad": "2025-04-10",
+    "tipo": 4
+  },
+  {
+    "nombre": "Leche",
+    "cantidad": 2,
+    "precio": 1.5,
+    "fechaCompra": "2025-04-01",
+    "fechaCaducidad": "2025-04-10",
+    "tipo": 1
+  },
+  {
+    "nombre": "Huevos",
+    "cantidad": 12,
+    "precio": 2.3,
+    "fechaCompra": "2025-04-03",
+    "fechaCaducidad": "2025-04-20",
+    "tipo": 1,
+    "gastoTotal": 30.00
+  },
+  {
+    "nombre": "Mantequilla",
+    "cantidad": 1,
+    "precio": 1.8,
+    "fechaCompra": "2025-03-28",
+    "fechaCaducidad": "2025-04-15",
+    "tipo": 2
+  },
+  {
+    "nombre": "Queso",
+    "cantidad": 3,
+    "precio": 2.7,
+    "fechaCompra": "2025-04-02",
+    "fechaCaducidad": "2025-04-18",
+    "tipo": 2
+  },
+  {
+    "nombre": "Zanahorias",
+    "cantidad": 5,
+    "precio": 1.2,
+    "fechaCompra": "2025-04-04",
+    "fechaCaducidad": "2025-04-12",
+    "tipo": 3
+  }
+]
