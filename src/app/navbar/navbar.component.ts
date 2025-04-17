@@ -17,8 +17,8 @@ export class NavbarComponent {
     this.router.navigate(['/']);
   }
 
-  goToAboutUs() {
-    this.router.navigate(['/about-us']);
+  goToLista() {
+    this.router.navigate(['/lista']);
   }
 
   goToProducts() {

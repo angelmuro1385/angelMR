@@ -1,0 +1,25 @@
+
+<div class="container">
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <label for="categoriaPadre">Categoría principal</label>
+  <select id="categoriaPadre" formControlName="categoriaPadre">
+    <option value="">Selecciona una categoría</option>
+    <option *ngFor="let cat of categoriasPadre" [value]="cat.id">
+      {{ cat.name }}
+    </option>
+  </select>
+
+  <label for="subcategoria">Subcategoría</label>
+  <select id="subcategoria" formControlName="subcategoria" [disabled]="!subcategorias.length">
+    <option value="">Selecciona una subcategoría</option>
+    <option *ngFor="let sub of subcategorias" [value]="sub.id">
+      {{ sub.name }}
+    </option>
+  </select>
+
+  <button type="submit">Enviar</button>
+</form>
+</div>
+
+
+  

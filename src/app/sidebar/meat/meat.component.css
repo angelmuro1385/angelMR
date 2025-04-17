@@ -1,0 +1,23 @@
+table {
+  width: calc(100% - 250px); /* Se ajusta para respetar el margin */
+  margin-top: 10px;
+  margin-left: 250px;
+  border-collapse: collapse;
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+thead {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+}

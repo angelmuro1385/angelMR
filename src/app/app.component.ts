@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ApiService } from './services/api.service';
+import axios from 'axios';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +12,29 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private router: Router) {}
 
-  goToIndex() {
-    this.router.navigate(['/']);  // ✅ Corregido
+
+export class AppComponent implements OnInit {
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+  ) {}
+
+  async ngOnInit() {
+    try {
+      const data = await this.apiService.getPost(1);
+      console.log('Datos:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
-  goToAboutUs() {
-    this.router.navigate(['/about-us']);
+  goToIndex() {
+    this.router.navigate(['/']);
+  }
+
+  goToLista() {
+    this.router.navigate(['/lista']);
   }
 
   goToProducts() {

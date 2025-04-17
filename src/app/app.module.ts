@@ -9,15 +9,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NeveraComponent } from './sidebar/nevera/nevera.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductosService } from '../assets/productos.service';
 import { MeatComponent } from './sidebar/meat/meat.component';
+
 
 @NgModule({
   declarations: [
    
   ],
   imports: [
+    HttpClientModule,
     MeatComponent,
     NeveraComponent,
     SidebarComponent,
