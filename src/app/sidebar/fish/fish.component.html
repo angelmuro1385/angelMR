@@ -1,17 +1,18 @@
-<h2>{{title}}</h2>
+<h2>{{ title }}</h2>
+
 <table>
   <thead>
     <tr>
       <th>Tipo</th>
-      <th>Precio (€)</th>
+      <th>Precio</th>
       <th>Kg</th>
-      <th>Fecha de caducidad</th>
+      <th>Caducidad</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let pescado of pescados">
       <td>{{ pescado.tipo }}</td>
-      <td>{{ pescado.precio  }}</td>
+      <td>{{ pescado.precio | currency:'EUR' }}</td>
       <td>{{ pescado.kg }}</td>
       <td>{{ pescado.caducidad }}</td>
     </tr>

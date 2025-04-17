@@ -4,15 +4,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-meat',
+  selector: 'app-fruit',
   imports:[CommonModule, HttpClientModule,],
-  templateUrl: './meat.component.html',
-  styleUrls: ['./meat.component.css']
+  templateUrl: './fruit.component.html',
+  styleUrls: ['./fruit.component.css']
 })
-export class MeatComponent {
-title = "Lista de carnes"
-
-carnes: any[] = [];
+export class FruitComponent {
+title = "Lista de frutas"
+frutas: any[] = [];
 private apiUrl = 'https://app.clubamarrako.es/api/v1/categories/'; // Cambia esta URL por la real
 
 constructor(private http: HttpClient) {}

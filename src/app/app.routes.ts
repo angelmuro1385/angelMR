@@ -8,6 +8,7 @@ import { MusicComponent } from './navbar/music/music.component';
 import { NeveraComponent } from './sidebar/nevera/nevera.component';
 import { MeatComponent } from './sidebar/meat/meat.component';
 import { FishComponent } from './sidebar/fish/fish.component';
+import { FruitComponent } from './sidebar/fruit/fruit.component';
 
 
 export const routes: Routes = [
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'nevera',component: NeveraComponent,},
   { path: 'meat',component: MeatComponent},
   { path: 'fish',component: FishComponent},
+  { path: 'fruit',component: FruitComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }, // Redirigir rutas no encontradas a Home
 ];
 
