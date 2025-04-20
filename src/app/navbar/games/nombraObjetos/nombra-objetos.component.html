@@ -1,0 +1,26 @@
+<div class="juego" *ngIf="!completado">
+  
+  <div class="tarjeta">
+    <h3>{{title}}</h3>
+    <img [src]="'assets/imagenes/' + objetoActual.imagen" alt="Imagen actual" />
+    <input
+      type="text"
+      [(ngModel)]="entradaUsuario"
+      [class.correcto]="mostrarResultado === true"
+      [class.incorrecto]="mostrarResultado === false"
+      placeholder="¿Qué es?"
+    />
+    <div class="botones">
+      <button (click)="comprobarRespuesta()">✅ Comprobar</button>
+      <button (click)="siguiente()" [disabled]="mostrarResultado !== true">➡️ Siguiente</button>
+    </div>
+    <div *ngIf="mensaje" [class.bien]="esCorrecto" [class.mal]="!esCorrecto" class="mensaje">
+      {{ mensaje }}
+    </div>
+  </div>
+</div>
+
+<div class="mensaje-final" *ngIf="completado">
+  <h2>¡Juego completado! 🎉</h2>
+  <button (click)="reiniciarJuego()">🔄 Reiniciar</button>
+</div>

@@ -1,0 +1,25 @@
+<h2>{{ title }}</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Fecha de Compra</th>
+      <th>Fecha de Caducidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let postres of postres">
+      <td>{{ postres.nombre }}</td>
+      <td>{{ postres.cantidad }}</td>
+      <td>{{ postres.precio }} €</td>
+      <td>{{ postres.fechaCompra }}</td>
+      <td>{{ postres.fechaCaducidad }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container">
+  <h3>Total gastado en postres: {{ totalGastado }}  €</h3>
+</div>

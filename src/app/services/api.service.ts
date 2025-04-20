@@ -5,26 +5,28 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'https://app.clubamarrako.es/api/v1/categories/';
+  private baseUrl = '#'; // Cambia esto según tu API
+  
 
-  // Método para obtener todas las categorías (usando Axios)
-  async getCategorias(): Promise<any[]> {
+  constructor() {}
+
+  async getPost(id: number): Promise<any> {
     try {
-      const response = await axios.get(this.apiUrl);
-      return response.data;  // Retorna los datos de la API
+      const response = await axios.get(`${this.baseUrl}/posts/${id}`);
+      return response.data;
     } catch (error) {
-      console.error('Error al obtener las categorías:', error);
-      return [];  // En caso de error, retornamos un array vacío
+      console.error(`Error al obtener el post con id ${id}:`, error);
+      throw error;
     }
   }
 
-  // Este es tu método actual que está funcionando con Axios para obtener un solo post
-  async getPost(id: number) {
+  async getCategorias(): Promise<any[]> {
     try {
-      const response = await axios.get(`${this.apiUrl}${id}`);
-      console.log('Datos con Axios:', response.data);
+      const response = await axios.get('/assets/categorias.json');
+      return response.data;
     } catch (error) {
-      console.error('Error con Axios:', error);
+      console.error('Error al cargar categorías mock:', error);
+      throw error;
     }
   }
 }

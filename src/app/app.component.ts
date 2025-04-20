@@ -3,17 +3,14 @@ import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ApiService } from './services/api.service';
-import axios from 'axios';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Solo si estás usando Angular Standalone Components
+  standalone: true,
   imports: [RouterOutlet, NavbarComponent, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
-
 export class AppComponent implements OnInit {
   constructor(
     private apiService: ApiService,
@@ -22,7 +19,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      const data = await this.apiService.getPost(1);
+      const data = await this.apiService.getPost(1); // Llama al nuevo método
       console.log('Datos:', data);
     } catch (error) {
       console.error('Error:', error);

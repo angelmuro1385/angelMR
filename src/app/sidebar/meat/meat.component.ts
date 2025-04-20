@@ -1,23 +1,31 @@
-import { Component,} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-meat',
-  imports:[CommonModule, HttpClientModule,],
+  standalone: true,
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './meat.component.html',
   styleUrls: ['./meat.component.css']
 })
-export class MeatComponent {
-title = "Lista de carnes"
+export class MeatComponent implements OnInit {
+  title = "Lista de carnes";
+  carnes: any[] = [];
+  totalGastado: number = 0;
+  private apiUrl = 'assets/nevera.json';
 
-carnes: any[] = [];
-private apiUrl = 'https://app.clubamarrako.es/api/v1/categories/'; // Cambia esta URL por la real
+  constructor(private http: HttpClient) {}
 
-constructor(private http: HttpClient) {}
-
-getPescados(): Observable<any[]> {
-  return this.http.get<any[]>(this.apiUrl);
+  ngOnInit(): void {
+    this.http.get<any>(this.apiUrl).subscribe(data => {
+      // Aquí estamos obteniendo las carnes del JSON
+      this.carnes = data?.alimentos?.carnes || [];
+      this.calcularTotalGastado();
+    });
+  }
+// Método para calcular el total gastado
+calcularTotalGastado(): void {
+  this.totalGastado = this.carnes.reduce((total, carnes) => total + carnes.precio, 0);
 }
 }

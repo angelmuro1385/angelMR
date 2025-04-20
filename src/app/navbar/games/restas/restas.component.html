@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>🧮 Aprende a Restar</h1>
+    <div class="suma">
+      <span>{{ num1 }}</span> -
+      <span>{{ num2 }}</span> =
+      <input [(ngModel)]="respuesta" type="number" />
+    </div>
+  
+    <div class="botones">
+      <button (click)="comprobar()">✅ Comprobar</button>
+      <button (click)="generarResta()">🔄 Nueva resta</button>
+    </div>
+  
+    <div *ngIf="mensaje" [class.ok]="esCorrecto" [class.error]="!esCorrecto">
+      {{ mensaje }}
+    </div>
+  </div>

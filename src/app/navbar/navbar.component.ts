@@ -30,6 +30,6 @@ export class NavbarComponent {
   }
 
   goToMusic() {
-    this.router.navigate(['/music']);
+    this.router.navigate(['/jukebox']);
   }
 }

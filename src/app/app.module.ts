@@ -12,6 +12,15 @@ import { NeveraComponent } from './sidebar/nevera/nevera.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductosService } from '../assets/productos.service';
 import { MeatComponent } from './sidebar/meat/meat.component';
+import { FishComponent } from './sidebar/fish/fish.component';
+import { DessertsComponent } from './sidebar/desserts/desserts.component';
+import { ColdCutsComponent } from './sidebar/coldCuts/coldCuts.component';
+import { HomeComponent } from './navbar/home/home.component';
+import { FormsModule } from '@angular/forms';
+import { PreservesComponent } from './sidebar/preserves/preserves.component';
+import { MilkComponent } from './sidebar/milk/milk.component';
+import { DrinkComponent } from './sidebar/drink/drink.component';
+import { NombraObjetosComponent } from './navbar/games/nombraObjetos/nombra-objetos.component';
 
 
 @NgModule({
@@ -19,6 +28,15 @@ import { MeatComponent } from './sidebar/meat/meat.component';
    
   ],
   imports: [
+    NombraObjetosComponent,
+    DrinkComponent,
+    MilkComponent,
+    PreservesComponent,
+    FormsModule,
+    HomeComponent,
+    ColdCutsComponent,
+    DessertsComponent,
+    FishComponent,
     HttpClientModule,
     MeatComponent,
     NeveraComponent,

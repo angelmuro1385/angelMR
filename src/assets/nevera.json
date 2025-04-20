@@ -1,66 +1,394 @@
 
-  
-
-
-[
-  {
-    "4": [
-      { "nombre": "Lomo", "precio": 5.0, "cantidad": 10 },
-      { "nombre": "Ternera", "precio": 7.5, "cantidad": 5 },
-      { "nombre": "Pollo", "precio": 3.0, "cantidad": 8 }
+{
+  "alimentos": {
+    "carnes": [
+      {
+        "nombre": "Ternera",
+        "cantidad": 5,
+        "precio": 12.50,
+        "fechaCompra": "2025-04-01",
+        "fechaCaducidad": "2025-04-08"
+      },
+      {
+        "nombre": "Pollo",
+        "cantidad": 3,
+        "precio": 8.25,
+        "fechaCompra": "2025-04-02",
+        "fechaCaducidad": "2025-04-09"
+      },
+      {
+        "nombre": "Cerdo",
+        "cantidad": 2,
+        "precio": 10.00,
+        "fechaCompra": "2025-04-03",
+        "fechaCaducidad": "2025-04-11"
+      }
     ],
-    "3": [
-      { "nombre": "Merluza", "precio": 6.0, "cantidad": 4 },
-      { "nombre": "Salmón", "precio": 9.0, "cantidad": 6 }
+    "pescados": [
+      {
+        "nombre": "Salmón",
+        "cantidad": 2,
+        "precio": 20.00,
+        "fechaCompra": "2025-04-01",
+        "fechaCaducidad": "2025-04-07"
+      },
+      {
+        "nombre": "Atún",
+        "cantidad": 1,
+        "precio": 15.00,
+        "fechaCompra": "2025-04-03",
+        "fechaCaducidad": "2025-04-10"
+      },
+      {
+        "nombre": "Trucha",
+        "cantidad": 3,
+        "precio": 10.00,
+        "fechaCompra": "2025-04-02",
+        "fechaCaducidad": "2025-04-09"
+      }
+    ],
+    "lacteos": [
+      {
+        "nombre": "Leche",
+        "cantidad": 2,
+        "precio": 1.50,
+        "fechaCompra": "2025-04-01",
+        "fechaCaducidad": "2025-04-10"
+      },
+      {
+        "nombre": "Huevos",
+        "cantidad": 12,
+        "precio": 2.30,
+        "fechaCompra": "2025-04-03",
+        "fechaCaducidad": "2025-04-20",
+        "gastoTotal": 30.00
+      }
+    ],
+    "derivados": [
+      {
+        "nombre": "Mantequilla",
+        "cantidad": 1,
+        "precio": 1.80,
+        "fechaCompra": "2025-03-28",
+        "fechaCaducidad": "2025-04-15"
+      },
+      {
+        "nombre": "Queso",
+        "cantidad": 3,
+        "precio": 2.70,
+        "fechaCompra": "2025-04-02",
+        "fechaCaducidad": "2025-04-18"
+      }
+    ],
+    "verduras": [
+      {
+        "nombre": "Zanahorias",
+        "cantidad": 5,
+        "precio": 1.20,
+        "fechaCompra": "2025-04-04",
+        "fechaCaducidad": "2025-04-12"
+      }
+    ],
+  
+      "conservas": [
+        {
+          "nombre": "Manzanas",
+          "cantidad": 5,
+          "precio": 1.20,
+          "fechaCompra": "2025-04-04",
+          "fechaCaducidad": "2025-04-12"
+        },
+        {
+          "nombre": "Duraznos",
+          "cantidad": 3,
+          "precio": 2.50,
+          "fechaCompra": "2025-03-28",
+          "fechaCaducidad": "2025-05-10"
+        },
+        {
+          "nombre": "Peras",
+          "cantidad": 4,
+          "precio": 1.75,
+          "fechaCompra": "2025-04-10",
+          "fechaCaducidad": "2025-05-01"
+        },
+        {
+          "nombre": "Frutilla",
+          "cantidad": 6,
+          "precio": 3.00,
+          "fechaCompra": "2025-04-05",
+          "fechaCaducidad": "2025-04-25"
+        },
+        {
+          "nombre": "Piña",
+          "cantidad": 2,
+          "precio": 2.80,
+          "fechaCompra": "2025-03-30",
+          "fechaCaducidad": "2025-06-15"
+        },
+        {
+          "nombre": "Cerezas",
+          "cantidad": 1,
+          "precio": 4.00,
+          "fechaCompra": "2025-04-12",
+          "fechaCaducidad": "2025-05-20"
+        }
+      ],
+      "leches":[
+        {
+          "nombre": "Leche Entera",
+          "cantidad": 10,
+          "precio": 0.95,
+          "fechaCompra": "2025-04-01",
+          "fechaCaducidad": "2025-04-20"
+        },
+        {
+          "nombre": "Leche Descremada",
+          "cantidad": 6,
+          "precio": 1.05,
+          "fechaCompra": "2025-04-03",
+          "fechaCaducidad": "2025-04-22"
+        },
+        {
+          "nombre": "Leche de Almendras",
+          "cantidad": 4,
+          "precio": 2.30,
+          "fechaCompra": "2025-04-05",
+          "fechaCaducidad": "2025-05-15"
+        },
+        {
+          "nombre": "Leche de Avena",
+          "cantidad": 3,
+          "precio": 2.00,
+          "fechaCompra": "2025-04-07",
+          "fechaCaducidad": "2025-05-10"
+        },
+        {
+          "nombre": "Leche de Coco",
+          "cantidad": 2,
+          "precio": 2.50,
+          "fechaCompra": "2025-04-09",
+          "fechaCaducidad": "2025-06-01"
+        },
+        {
+          "nombre": "Leche Sin Lactosa",
+          "cantidad": 5,
+          "precio": 1.80,
+          "fechaCompra": "2025-04-08",
+          "fechaCaducidad": "2025-04-28"
+        }
+      ],
+      "bebidas":[
+        {
+          "nombre": "Agua Mineral",
+          "cantidad": 12,
+          "precio": 0.60,
+          "fechaCompra": "2025-04-02",
+          "fechaCaducidad": "2026-04-02"
+        },
+        {
+          "nombre": "Jugo de Naranja",
+          "cantidad": 6,
+          "precio": 1.20,
+          "fechaCompra": "2025-04-05",
+          "fechaCaducidad": "2025-04-20"
+        },
+        {
+          "nombre": "Refresco de Cola",
+          "cantidad": 8,
+          "precio": 1.10,
+          "fechaCompra": "2025-04-03",
+          "fechaCaducidad": "2025-08-01"
+        },
+        {
+          "nombre": "Té Helado",
+          "cantidad": 4,
+          "precio": 1.50,
+          "fechaCompra": "2025-04-06",
+          "fechaCaducidad": "2025-07-15"
+        },
+        {
+          "nombre": "Bebida Energética",
+          "cantidad": 5,
+          "precio": 2.00,
+          "fechaCompra": "2025-04-01",
+          "fechaCaducidad": "2025-09-30"
+        },
+        {
+          "nombre": "Limonada",
+          "cantidad": 3,
+          "precio": 1.00,
+          "fechaCompra": "2025-04-04",
+          "fechaCaducidad": "2025-04-18"
+        }
+      ],
+      
+    "frutas":[
+      {
+        "nombre": "Manzanas",
+        "cantidad": 5,
+        "precio": 1.20,
+        "fechaCompra": "2025-04-04",
+        "fechaCaducidad": "2025-04-12"
+      },
+      {
+        "nombre": "Peras",
+        "cantidad": 4,
+        "precio": 2.50,
+        "fechaCompra": "2025-04-04",
+        "fechaCaducidad": "2025-04-12"
+      },
+      {
+        "nombre": "Platanos",
+        "cantidad": 8,
+        "precio": 3.20,
+        "fechaCompra": "2025-04-04",
+        "fechaCaducidad": "2025-04-12"
+      }
+    ],
+    "postres": [
+      {
+        "nombre": "Tarta de queso",
+        "cantidad": 1,
+        "precio": 4.50,
+        "fechaCompra": "2025-04-10",
+        "fechaCaducidad": "2025-04-15"
+      },
+      {
+        "nombre": "Flan de huevo",
+        "cantidad": 3,
+        "precio": 1.80,
+        "fechaCompra": "2025-04-12",
+        "fechaCaducidad": "2025-04-18"
+      },
+      {
+        "nombre": "Helado de vainilla",
+        "cantidad": 2,
+        "precio": 3.00,
+        "fechaCompra": "2025-04-08",
+        "fechaCaducidad": "2025-06-01"
+      },
+      {
+        "nombre": "Natillas",
+        "cantidad": 4,
+        "precio": 2.20,
+        "fechaCompra": "2025-04-11",
+        "fechaCaducidad": "2025-04-19"
+      },
+      {
+        "nombre": "Brownie de chocolate",
+        "cantidad": 2,
+        "precio": 2.80,
+        "fechaCompra": "2025-04-09",
+        "fechaCaducidad": "2025-04-16"
+      },
+      {
+        "nombre": "Tarta de manzana",
+        "cantidad": 1,
+        "precio": 4.00,
+        "fechaCompra": "2025-04-07",
+        "fechaCaducidad": "2025-04-14"
+      },
+      {
+        "nombre": "Mousse de limón",
+        "cantidad": 3,
+        "precio": 2.50,
+        "fechaCompra": "2025-04-10",
+        "fechaCaducidad": "2025-04-17"
+      },
+      {
+        "nombre": "Crema catalana",
+        "cantidad": 2,
+        "precio": 2.90,
+        "fechaCompra": "2025-04-11",
+        "fechaCaducidad": "2025-04-18"
+      },
+      {
+        "nombre": "Panna cotta",
+        "cantidad": 2,
+        "precio": 3.10,
+        "fechaCompra": "2025-04-08",
+        "fechaCaducidad": "2025-04-15"
+      },
+      {
+        "nombre": "Gelatina de fresa",
+        "cantidad": 5,
+        "precio": 1.20,
+        "fechaCompra": "2025-04-12",
+        "fechaCaducidad": "2025-04-20"
+      }
+    ],
+    "embutidos": [
+      {
+        "nombre": "Jamon serrano",
+        "cantidad": 150,
+        "precio": 5.50,
+        "fechaCompra": "2025-04-10",
+        "fechaCaducidad": "2025-04-20"
+      },
+      {
+        "nombre": "Chorizo",
+        "cantidad": 200,
+        "precio": 3.20,
+        "fechaCompra": "2025-04-08",
+        "fechaCaducidad": "2025-05-01"
+      },
+      {
+        "nombre": "Salami",
+        "cantidad": 100,
+        "precio": 2.90,
+        "fechaCompra": "2025-04-09",
+        "fechaCaducidad": "2025-05-05"
+      },
+      {
+        "nombre": "Pechuga de pavo",
+        "cantidad": 300,
+        "precio": 3.75,
+        "fechaCompra": "2025-04-11",
+        "fechaCaducidad": "2025-04-25"
+      },
+      {
+        "nombre": "Mortadela",
+        "cantidad": 200,
+        "precio": 2.60,
+        "fechaCompra": "2025-04-07",
+        "fechaCaducidad": "2025-04-21"
+      },
+      {
+        "nombre": "Jamon cocido",
+        "cantidad": 100,
+        "precio": 3.10,
+        "fechaCompra": "2025-04-12",
+        "fechaCaducidad": "2025-04-22"
+      },
+      {
+        "nombre": "Bologna",
+        "cantidad": 200,
+        "precio": 2.40,
+        "fechaCompra": "2025-04-10",
+        "fechaCaducidad": "2025-04-24"
+      },
+      {
+        "nombre": "Lomo de cerdo",
+        "cantidad": 100,
+        "precio": 4.20,
+        "fechaCompra": "2025-04-08",
+        "fechaCaducidad": "2025-04-18"
+      },
+      {
+        "nombre": "Pepperoni",
+        "cantidad": 250,
+        "precio": 3.50,
+        "fechaCompra": "2025-04-11",
+        "fechaCaducidad": "2025-04-30"
+      },
+      {
+        "nombre": "Roast beef en lonchas",
+        "cantidad": 175,
+        "precio": 4.80,
+        "fechaCompra": "2025-04-09",
+        "fechaCaducidad": "2025-04-23"
+      }
     ]
-  },
-  {
-    "nombre": "Carne",
-    "cantidad": 7,
-    "precio": 34.50,
-    "fechaCompra": "2025-04-01",
-    "fechaCaducidad": "2025-04-10",
-    "tipo": 4
-  },
-  {
-    "nombre": "Leche",
-    "cantidad": 2,
-    "precio": 1.5,
-    "fechaCompra": "2025-04-01",
-    "fechaCaducidad": "2025-04-10",
-    "tipo": 1
-  },
-  {
-    "nombre": "Huevos",
-    "cantidad": 12,
-    "precio": 2.3,
-    "fechaCompra": "2025-04-03",
-    "fechaCaducidad": "2025-04-20",
-    "tipo": 1,
-    "gastoTotal": 30.00
-  },
-  {
-    "nombre": "Mantequilla",
-    "cantidad": 1,
-    "precio": 1.8,
-    "fechaCompra": "2025-03-28",
-    "fechaCaducidad": "2025-04-15",
-    "tipo": 2
-  },
-  {
-    "nombre": "Queso",
-    "cantidad": 3,
-    "precio": 2.7,
-    "fechaCompra": "2025-04-02",
-    "fechaCaducidad": "2025-04-18",
-    "tipo": 2
-  },
-  {
-    "nombre": "Zanahorias",
-    "cantidad": 5,
-    "precio": 1.2,
-    "fechaCompra": "2025-04-04",
-    "fechaCaducidad": "2025-04-12",
-    "tipo": 3
   }
-]
+}

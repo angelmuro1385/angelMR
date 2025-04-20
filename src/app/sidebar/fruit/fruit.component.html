@@ -1,20 +1,25 @@
 <h2>{{ title }}</h2>
-
 <table>
   <thead>
     <tr>
-      <th>Tipo</th>
+      <th>Nombre</th>
+      <th>Cantidad (kg)</th>
       <th>Precio</th>
-      <th>Kg</th>
-      <th>Caducidad</th>
+      <th>Fecha de Compra</th>
+      <th>Fecha de Caducidad</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let fruta of frutas">
-      <td>{{ fruta .tipo }}</td>
-      <td>{{ fruta .precio | currency:'EUR' }}</td>
-      <td>{{ fruta .kg }}</td>
-      <td>{{ fruta .caducidad }}</td>
+    <tr *ngFor="let frutas of frutas">
+      <td>{{ frutas.nombre }}</td>
+      <td>{{ frutas.cantidad }}</td>
+      <td>{{ frutas.precio }} €</td>
+      <td>{{ frutas.fechaCompra }}</td>
+      <td>{{ frutas.fechaCaducidad }}</td>
     </tr>
   </tbody>
 </table>
+
+<div class="container">
+  <h3>Total gastado en fruta: {{ totalGastado }}  €</h3>
+</div>

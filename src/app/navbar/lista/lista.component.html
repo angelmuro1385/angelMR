@@ -1,25 +1,38 @@
-
+<!-- src/app/components/lista/lista.component.html -->
+<div class="container">
+  <!-- src/app/components/lista/lista.component.html -->
 <div class="container">
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-  <label for="categoriaPadre">Categoría principal</label>
-  <select id="categoriaPadre" formControlName="categoriaPadre">
-    <option value="">Selecciona una categoría</option>
-    <option *ngFor="let cat of categoriasPadre" [value]="cat.id">
-      {{ cat.name }}
-    </option>
-  </select>
+    <label for="categoriaPadre">Categoría principal</label>
+    <select id="categoriaPadre" formControlName="categoriaPadre">
+      <option value="">Selecciona una categoría</option>
+      <option *ngFor="let cat of categoriasPadre" [value]="cat.id">
+        {{ cat.name }}
+      </option>
+    </select>
 
-  <label for="subcategoria">Subcategoría</label>
-  <select id="subcategoria" formControlName="subcategoria" [disabled]="!subcategorias.length">
-    <option value="">Selecciona una subcategoría</option>
-    <option *ngFor="let sub of subcategorias" [value]="sub.id">
-      {{ sub.name }}
-    </option>
-  </select>
+    <label for="subcategoria">Subcategoría</label>
+    <select id="subcategoria" formControlName="subcategoria" [disabled]="!subcategorias.length">
+      <option value="">Selecciona una subcategoría</option>
+      <option *ngFor="let sub of subcategorias" [value]="sub.id">
+        {{ sub.name }}
+      </option>
+    </select>
 
-  <button type="submit">Enviar</button>
-</form>
+    <!-- Descripción adicional -->
+    <label for="descripcion">Descripción</label>
+    <input id="descripcion" formControlName="descripcion" type="text" />
+
+    <!-- Botón para enviar -->
+    <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+  </form>
+
+  <div *ngIf="resultados.length > 0">
+    <h3>Resultados</h3>
+    <ul>
+      <li *ngFor="let resultado of resultados">{{ resultado | json }}</li>
+    </ul>
+  </div>
 </div>
 
-
-  
+</div>

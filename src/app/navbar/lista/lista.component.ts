@@ -1,48 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Injectable } from '@angular/core';
+import axios from 'axios';
 import { ApiService } from '../../services/api.service';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
-@Component({
-  selector: 'app-lista',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './lista.component.html',
-  styleUrl: './lista.component.css'
+@Injectable({
+  providedIn: 'root'
 })
-export class ListaComponent implements OnInit {
-  categorias: any[] = [];
-  categoriasPadre: any[] = [];
-  subcategorias: any[] = [];
-  formulario!: FormGroup;
+export class ListaService {
+  private baseUrl = 'http://localhost:3000/'; // Cambia esto si usas proxy
 
-  constructor(private fb: FormBuilder, private apiService: ApiService) {}
+  constructor() {}
 
-  // Cuando el componente se inicializa, obtenemos las categorías
-  async ngOnInit() {
-    this.formulario = this.fb.group({
-      categoriaPadre: [''],
-      subcategoria: ['']
-    });
-
+  async getCategorias(): Promise<any[]> {
     try {
-      const data = await this.apiService.getCategorias();  // Obtenemos las categorías con Axios
-      this.categorias = data;
-      this.categoriasPadre = data.filter(cat => cat.parent_id === null);  // Solo las categorías sin parent_id
+      const response = await axios.get(`${this.baseUrl}/categorias`);
+      return response.data;
     } catch (error) {
-      console.error('Error al cargar categorías', error);
+      console.error('Error al obtener categorías:', error);
+      throw error;
     }
-
-    // Escucha los cambios del select de "categoríaPadre" para filtrar las subcategorías
-    this.formulario.get('categoriaPadre')?.valueChanges.subscribe(parentId => {
-      this.subcategorias = this.categorias.filter(cat => cat.parent_id === +parentId);
-      this.formulario.get('subcategoria')?.reset();
-    });
   }
 
-  // Maneja el envío del formulario
-  onSubmit() {
-    console.log('Formulario:', this.formulario.value);
+  async getSubcategorias(categoriaId: string): Promise<any[]> {
+    try {
+      const response = await axios.get(`${this.baseUrl}/subcategorias/${categoriaId}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error al obtener subcategorías:', error);
+      throw error;
+    }
+  }
+
+  async filtrarDatos(filtros: any): Promise<any[]> {
+    try {
+      const response = await axios.post(`${this.baseUrl}/filtrar`, filtros);
+      return response.data;
+    } catch (error) {
+      console.error('Error al filtrar datos:', error);
+      throw error;
+    }
   }
 }

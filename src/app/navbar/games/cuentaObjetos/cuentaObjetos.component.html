@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>¿Cuántas imágenes ves?</h2>
+
+  <div class="imagenes">
+    <img *ngFor="let _ of obtenerArray()" [src]="imagenUrl" alt="objeto aleatorio" />
+  </div>
+  
+  <input type="number" [(ngModel)]="respuestaUsuario" placeholder="Tu respuesta" />
+  <button (click)="comprobar()">Comprobar</button>
+  <button (click)="generarObjetos()">Generar</button>
+  
+  <p [style.color]="esCorrecto ? 'green' : 'red'">{{ mensaje }}</p>
+  
+</div>

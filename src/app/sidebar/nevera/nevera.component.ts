@@ -20,38 +20,31 @@ export interface ProductoNevera {
 })
 export class NeveraComponent implements OnInit {
 
-  productos: ProductoNevera[] = []; // Usamos la interfaz para tipar los productos
-  gastoTotal: number = 0;
+  title = "Lista de Alimentos";
+  alimentos: any[] = [];
+  totalGastado: number = 0;
+  private apiUrl = '/assets/nevera.json';
 
   constructor(private http: HttpClient) {}
 
-  identity<T>(arg: T): void {
-    this.http.get<T>('https://app.clubamarrako.es/api/v1/categories/')
-      .subscribe(data => {
-        console.log(data);  
-      });
-  }
-
   ngOnInit(): void {
-    this.http.get<any[]>('assets/nevera.json')// Cambiado a ProductoNevera[]
-      .subscribe(
-        data => {
-          this.productos = data;
-
-      
+    this.http.get<any>(this.apiUrl).subscribe(data => {
+      const categorias = data?.alimentos || {};
+      this.alimentos = [];
   
-          // Calcular gasto total
-          this.gastoTotal = this.productos.reduce((total, prod) => {
-            return total + (prod.precio * prod.cantidad);
-          }, 0);
-  
-          console.log('Datos cargados:', this.productos);
-          console.log('Gasto total:', this.gastoTotal);
-        },
-        error => {
-          console.error('Error cargando el JSON', error);
-          this.gastoTotal = 0; // En caso de error, no mostrar gasto total
+      // Unir todos los arrays de alimentos en uno solo
+      for (let categoria in categorias) {
+        if (Array.isArray(categorias[categoria])) {
+          this.alimentos = this.alimentos.concat(categorias[categoria]);
         }
-      );
+      }
+  
+      this.calcularTotalGastado();
+    });
+  }
+  
+  // Método fuera de ngOnInit
+  calcularTotalGastado(): void {
+    this.totalGastado = this.alimentos.reduce((total, alimento) => total + (alimento.precio || 0), 0);
   }
 }
